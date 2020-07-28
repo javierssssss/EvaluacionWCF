@@ -11,8 +11,6 @@ export class Empleado {
   joblevel: number;
   nombre: string;
 
-
-  
   }
 
 
@@ -24,8 +22,10 @@ export class Empleado {
 })
 export class InicioComponent implements OnInit {
   public listado: Empleado[] = []; 
-  constructor(private  webApi : WebApiService) { }
   public empleados : Observable<Empleado[]>;
+  constructor(private  webApi : WebApiService) {
+   }
+
   ngOnInit(): void {
     this.devolverEmpleados();
   }
@@ -34,8 +34,8 @@ export class InicioComponent implements OnInit {
     const url = 'http://localhost:14700/Service1.svc/GetData';
 
     this.empleados = this.webApi.getEmployees(url);
-        this.empleados.subscribe((studentsData: Empleado[]) => {
-          this.listado = studentsData;    });
+        this.empleados.subscribe((emps: Empleado[]) => {
+          this.listado = emps;    });
   
           
     }

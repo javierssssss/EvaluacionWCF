@@ -1,30 +1,24 @@
 <div id="cuerpoContent">
     asdasdas
-    <div  id= "noTareas" *ngIf = "  listado.length == 0  " >
     
-        <!--Aqui poner un elemento que notifique la ausencia de tareas-->
-        No tiene tareas ... aún 
-     
-    </div>
-    
-    
-    
-    
-    
-    <table  *ngIf= " this.listado.length > 0"  >
+
+    <table  >
         <tr id="headers">
             <td>
-                Título
+                ID
             </td>
             <td>
-                Fecha Emisión
+                NOMBRE
             </td>
             <td>
-                Fecha Límite
+                APELLIDO
             </td>
     
             <td>
-                Entregado
+                JOBID
+            </td>
+            <td>
+                JOB LEVEL
             </td>
         </tr>
        <tr *ngFor="let item of listado ">
@@ -33,10 +27,13 @@
           </button > </td> 
           <td class="fecha"> {{item.nombre }} </td> 
           <td class="fecha" > {{item.apellido}} </td> 
+          <td class="fecha"> {{item.jobid }} </td> 
+          <td class="fecha" > {{item.joblevel}} </td> 
+
          <!--         <td > {{item.Estado}} </td>       --> 
      
        </tr>
     </table>
     
-    
+</div>
     
