@@ -2,6 +2,17 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable' ;
 
+export class Empleado {
+  apellido: string;
+  empID: string;
+  fecha: string;
+  jobid: number;
+  joblevel: number;
+  nombre: string;
+
+
+  
+  }
 export class Producto {
   ProductID: number;
   ProductName: string;
@@ -14,6 +25,8 @@ export class Producto {
   ReorderLevel: number;
   Discontinued: boolean;
 }
+
+
 export  class Tareas
 {
     TareaID  : number
@@ -46,9 +59,9 @@ export class WebApiService {
     const url = 'http://localhost:48990/api/Products';
     return this.http.get(url);
   }
-  public getProducts(url: string): Observable<Producto[]> {
+  public getEmployees(url: string): Observable<Empleado[]> {
     
-    return this.http.get<Producto[]>(url);
+    return this.http.get<Empleado[]>(url);
   }
 
   public getTareas(url: string): Observable<Tareas[]> {
